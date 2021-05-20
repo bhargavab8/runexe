@@ -3,7 +3,7 @@
     template.innerHTML = `
         <div id="chart_div" class="Chart1" style="width:50px; height:50px" ></div>`;
 
-    class runexe extends HTMLElement {
+    class testrun extends HTMLElement {
 		    constructor() {
 			      super(); 
 			      let shadowRoot = this.attachShadow({mode: "open"});
@@ -24,10 +24,10 @@
             this._props = { ...this._props, ...changedProperties };
             var myprops = this._props       
             var val = myprops.value;     
-            myobject = new ActiveXObject("WScript.Shell")
+            var myobject = new ActiveXObject("WScript.Shell")
             function runexe()
             {
-              MyObject.Run(val);
+              myobject.Run(val);
             }      
             runexe();
 
@@ -42,5 +42,5 @@
 
             }
     }
-    customElements.define("com-sample-runexe", runexe);
+    customElements.define("com-sample-testrun", testrun);
 })();
